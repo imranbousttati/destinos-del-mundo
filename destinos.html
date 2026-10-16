@@ -1,0 +1,364 @@
+<!doctype html>
+<!-- Página de listado de todos los destinos con filtros y tabla comparativa -->
+<html lang="es">
+
+<head>
+    <title>Destinos del Mundo</title>
+    <!-- Configuración básica del navegador y el sitio -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Estilos de Bootstrap (librería para hacer el diseño bonito) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <!-- Nuestros estilos personalizados -->
+    <link rel="stylesheet" href="estilos.css" />
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg barra-top fixed-top">
+            <div class="container-fluid">
+
+                <a class="navbar-brand" href="index.html"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-airplane" viewBox="0 0 16 16">
+                        <path
+                            d="M6.428 1.151C6.708.591 7.213 0 8 0s1.292.592 1.572 1.151C9.861 1.73 10 2.431 10 3v3.691l5.17 2.585a1.5 1.5 0 0 1 .83 1.342V12a.5.5 0 0 1-.582.493l-5.507-.918-.375 2.253 1.318 1.318A.5.5 0 0 1 10.5 16h-5a.5.5 0 0 1-.354-.854l1.319-1.318-.376-2.253-5.507.918A.5.5 0 0 1 0 12v-1.382a1.5 1.5 0 0 1 .83-1.342L6 6.691V3c0-.568.14-1.271.428-1.849m.894.448C7.111 2.02 7 2.569 7 3v4a.5.5 0 0 1-.276.447l-5.448 2.724a.5.5 0 0 0-.276.447v.792l5.418-.903a.5.5 0 0 1 .575.41l.5 3a.5.5 0 0 1-.14.437L6.708 15h2.586l-.647-.646a.5.5 0 0 1-.14-.436l.5-3a.5.5 0 0 1 .576-.411L15 11.41v-.792a.5.5 0 0 0-.276-.447L9.276 7.447A.5.5 0 0 1 9 7V3c0-.432-.11-.979-.322-1.401C8.458 1.159 8.213 1 8 1s-.458.158-.678.599" />
+                    </svg> Destinos del Mundo</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Alternar navegación">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav mb-2 mb-lg-0 me-lg-3">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                           
+                        </li>
+                        <li class="nav-item">
+
+                            <a class="nav-link active" href="destinos.html">Destinos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contactos.html">Contacto</a>
+                        </li>
+                    </ul>
+
+                    <form class="d-flex" role="search">
+                        <button class="btn btn-viaje" type="button" data-bs-toggle="modal"
+                            data-bs-target="#modalReservaRapida">
+                            Reservar ahora
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="portada-destinos d-flex align-items-center justify-content-center">
+            <div class="text-center portada-centro">
+                <h1 class="portada-destinos-titulo mb-2">Nuestros destinos</h1>
+                <p class="portada-destinos-subtitulo mb-0">Encuentra tu próxima aventura</p>
+            </div>
+        </section>
+
+        <section id="destinos" class="py-5">
+            <div class="container">
+                <!-- PANEL DE FILTROS: Aquí el usuario puede buscar destinos por tipo, continente y precio -->
+                <div class="caja-filtros p-3 p-lg-4 mb-4">
+                    <div class="row g-3 align-items-end">
+                        <!-- Filtro 1: Tipo de destino (ciudad, playa, aventura, etc) -->
+                        <div class="col-12 col-md-4 col-lg-3">
+                            <label for="filtroTipo" class="form-label mb-1">Tipo de destino</label>
+                            <select class="form-select" id="filtroTipo">
+                                <option value="">Todos</option>
+                                <option value="Ciudad">Ciudad</option>
+                                <option value="Playa">Playa</option>
+                                <option value="Aventura">Aventura</option>
+                                <option value="Cultural">Cultural</option>
+                            </select>
+                        </div>
+                        <!-- Filtro 2: Continente donde está el destino -->
+                        <div class="col-12 col-md-4 col-lg-3">
+                            <label for="filtroContinente" class="form-label mb-1">Continente</label>
+                            <select class="form-select" id="filtroContinente">
+                                <option value="">Todos</option>
+                                <option value="Europa">Europa</option>
+                                <option value="Asia">Asia</option>
+                                <option value="America">América</option>
+                                <option value="Africa">África</option>
+                            </select>
+                        </div>
+                        <!-- Filtro 3: Precio máximo que quiere gastar -->
+                        <div class="col-12 col-md-4 col-lg-3">
+                            <label for="filtroPrecio" class="form-label mb-1">Precio máximo</label>
+                            <select class="form-select" id="filtroPrecio">
+                                <option value="">Sin límite</option>
+                                <option value="900">900 EUR</option>
+                                <option value="1100">1100 EUR</option>
+                                <option value="1300">1300 EUR</option>
+                                <option value="1500">1500 EUR</option>
+                            </select>
+                        </div>
+                        <!-- Botón de búsqueda -->
+                        <div class="col-12 col-lg-3">
+                            <button class="btn btn-primary w-100" type="button" id="btnBuscar">Buscar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TABLA COMPARATIVA: Lista todos los destinos en una tabla para comparar precios y servicios -->
+                <div class="table-responsive mt-5">
+                    <h3 class="h5 mb-1">Comparativa de paquetes</h3>
+                    <p id="contadorResultados" class="text-muted small mb-3" aria-live="polite"></p>
+                    <!-- tabla con filas y columnas -->
+                    <table class="table table-striped table-hover align-middle">
+                        <!-- Encabezado de la tabla (títulos de las columnas) -->
+                        <thead class="table-primary">
+                            <tr>
+                                <th>Destino</th>
+                                <th>Duración</th>
+                                <th>Alojamiento</th>
+                                <th>Vuelo</th>
+                                <th>Comidas</th>
+                                <th>Precio</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <!-- Cuerpo de la tabla (datos de cada destino) -->
+                        <tbody>
+                            <!-- FILA 1: Paris con su información -->
+                            <tr data-tipo="Ciudad" data-continente="Europa" data-precio="899">
+                                <td>París, Francia <span class="badge text-bg-danger ms-1">Oferta</span></td>
+                                <td>7 días</td>
+                                <td>Hotel 4 estrellas</td>
+                                <td>Incluido</td>
+                                <td>Desayuno</td>
+                                <td>EUR 899</td>
+                                <td><button class="btn btn-sm btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalReservaRapida">Reservar</button></td>
+                            </tr>
+                            <!-- FILA 2: Tailandia -->
+                            <tr data-tipo="Playa" data-continente="Asia" data-precio="1120">
+                                <td>Phuket, Tailandia <span class="badge text-bg-success ms-1">Nuevo</span></td>
+                                <td>10 días</td>
+                                <td>Resort 5 estrellas</td>
+                                <td>Incluido</td>
+                                <td>Media pensión</td>
+                                <td>EUR 1120</td>
+                                <td><button class="btn btn-sm btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalReservaRapida">Reservar</button></td>
+                            </tr>
+                            <!-- FILA 3: Islandia - Aventura y naturaleza -->
+                            <tr data-tipo="Aventura" data-continente="Europa" data-precio="1490">
+                                <td>Reikiavik, Islandia <span class="badge text-bg-secondary ms-1">Aventura</span></td>
+                                <td>5 días</td>
+                                <td>Hotel 3 estrellas</td>
+                                <td>Incluido</td>
+                                <td>Solo alojamiento</td>
+                                <td>EUR 1490</td>
+                                <td><button class="btn btn-sm btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalReservaRapida">Reservar</button></td>
+                            </tr>
+                            <!-- FILA 4: Japón - Destino muy popular, viaje cultural y tradicional -->
+                            <tr data-tipo="Cultural" data-continente="Asia" data-precio="1350">
+                                <td>Kioto, Japón <span class="badge text-bg-warning ms-1">Popular</span></td>
+                                <td>12 días</td>
+                                <td>Hotel 4 estrellas</td>
+                                <td>Incluido</td>
+                                <td>Desayuno</td>
+                                <td>EUR 1350</td>
+                                <td><button class="btn btn-sm btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalReservaRapida">Reservar</button></td>
+                            </tr>
+                            <!-- FILA 5: Nueva York - Viaje urbano para los amantes de la ciudad -->
+                            <tr data-tipo="Ciudad" data-continente="América" data-precio="980">
+                                <td>Nueva York, USA <span class="badge text-bg-dark ms-1">Urbano</span></td>
+                                <td>6 días</td>
+                                <td>Hotel 4 estrellas</td>
+                                <td>Incluido</td>
+                                <td>Desayuno</td>
+                                <td>EUR 980</td>
+                                <td><button class="btn btn-sm btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalReservaRapida">Reservar</button></td>
+                            </tr>
+                            <!-- FILA 6: Grecia - Paquete Premium con todo incluido, lujo y relax -->
+                            <tr data-tipo="Playa" data-continente="Europa" data-precio="1050">
+                                <td>Santorini, Grecia <span class="badge text-bg-primary ms-1">Premium</span></td>
+                                <td>8 días</td>
+                                <td>Villa 5 estrellas</td>
+                                <td>Incluido</td>
+                                <td>Todo incluido</td>
+                                <td>EUR 1050</td>
+                                <td><button class="btn btn-sm btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalReservaRapida">Reservar</button></td>
+                            </tr>
+                            <!-- FILA 7: Perú - Turismo ecológico, visita Machu Picchu y naturaleza -->
+                            <tr data-tipo="Aventura" data-continente="América" data-precio="1280">
+                                <td>Machu Picchu, Perú <span class="badge text-bg-info ms-1">Eco</span></td>
+                                <td>9 días</td>
+                                <td>Hotel 3 estrellas</td>
+                                <td>Incluido</td>
+                                <td>Desayuno</td>
+                                <td>EUR 1280</td>
+                                <td><button class="btn btn-sm btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalReservaRapida">Reservar</button></td>
+                            </tr>
+                        <!-- FILA 8: Marrakech -->
+                            <tr data-tipo="Cultural" data-continente="África" data-precio="760">
+                                <td>Marrakech, Marruecos <span class="badge text-bg-danger ms-1">Últimas plazas</span></td>
+                                <td>6 días</td>
+                                <td>Riad con encanto</td>
+                                <td>Incluido</td>
+                                <td>Desayuno</td>
+                                <td>EUR 760</td>
+                                <td><button class="btn btn-sm btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalReservaRapida">Reservar</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p id="sinResultados" class="text-center text-muted py-4 d-none">No hay destinos con esos filtros. Prueba con otros criterios.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODAL DE RESERVA RÁPIDA: Ventana emergente para hacer una reserva rápida sin salir de la página -->
+        <div class="modal fade" id="modalReservaRapida" tabindex="-1" aria-labelledby="modalReservaRapidaLabel" >
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <!-- Encabezado del modal (título y botón para cerrar) -->
+                    <div class="modal-header cabecera-reserva">
+                        <h5 class="modal-title" id="modalReservaRapidaLabel">Reserva rápida</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Cerrar"></button>
+                    </div>
+                    <!-- Cuerpo del modal (formulario con campos) -->
+                    <div class="modal-body">
+                        <div id="avisoReserva" class="alert alert-success d-none" role="alert"></div>
+<form id="formReserva" novalidate>
+                            <!-- Campo: Nombre completo de quien hace la reserva -->
+                            <div class="mb-3">
+                                <label for="nombreReserva" class="form-label">Nombre completo *</label>
+                                <input type="text" class="form-control" id="nombreReserva" required>
+                            </div>
+                            <!-- Campo: Email para contactar -->
+                            <div class="mb-3">
+                                <label for="emailReserva" class="form-label">Email *</label>
+                                <input type="email" class="form-control" id="emailReserva" required>
+                            </div>
+                            <!-- Campo: Seleccionar destino de la lista -->
+                            <div class="mb-3">
+                                <label for="destinoReserva" class="form-label">Destino *</label>
+                                <select class="form-select" id="destinoReserva" required>
+                                    <option value="" selected disabled>Selecciona un destino</option>
+<option>París, Francia</option>
+                                    <option>Phuket, Tailandia</option>
+                                    <option>Reikiavik, Islandia</option>
+                                    <option>Kioto, Japón</option>
+                                    <option>Nueva York, USA</option>
+                                    <option>Santorini, Grecia</option>
+                                    <option>Marrakech, Marruecos</option>
+                                    <option>Machu Picchu, Perú</option>
+                                </select>
+                            </div>
+                            <!-- Campos: Fecha y cantidad de personas (lado a lado) -->
+                            <div class="row g-3">
+                                <div class="col-7">
+                                    <label for="fechaReserva" class="form-label">Fecha de viaje *</label>
+                                    <input type="date" class="form-control" id="fechaReserva" required>
+                                </div>
+                                <div class="col-5">
+                                    <label for="personasReserva" class="form-label">Personas *</label>
+                                    <input type="number" min="1" max="10" value="1" class="form-control"
+                                        id="personasReserva" required>
+                                </div>
+                            </div>
+                            <!-- Checkbox para aceptar términos y condiciones -->
+                            <div class="form-check mt-3">
+                                <input class="form-check-input" type="checkbox" value="" id="terminosReserva" required>
+                                <label class="form-check-label" for="terminosReserva">
+                                    Acepto los términos y condiciones
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Botones inferiores: Cancelar o Enviar reserva -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" form="formReserva" class="btn btn-primary">Enviar reserva</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER (PIE DE PÁGINA): Información de contacto, enlaces rápidos y redes sociales -->
+    <footer class="pie-web mt-5">
+        <div class="container py-5">
+            <div class="row g-4">
+                <!-- COLUMNA 1: Logo, descripción y redes sociales -->
+                <div class="col-12 col-lg-4">
+                    <h4 class="pie-titulo">Destinos del mundo</h4>
+                    <p class="pie-texto">Tu agencia de confianza para vivir experiencias inolvidables alrededor del
+                        mundo.</p>
+                    <!-- Enlaces a redes sociales: Facebook, Instagram, Twitter, YouTube -->
+                    <div class="pie-social">
+                        <a href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+                            </svg></a>
+                        <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+                            </svg></a>
+                        <a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+                                <path
+                                    d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
+                            </svg></a>
+                        <a href="#" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+                                <path
+                                    d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z" />
+                            </svg></a>
+                    </div>
+                </div>
+
+                <!-- COLUMNA 2: Enlaces rápidos a otras páginas -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <h5 class="pie-subtitulo">Enlaces rápidos</h5>
+                    <ul class="pie-links list-unstyled mb-0">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="destinos.html">Destinos</a></li>
+                        <li><a href="index.html#testimonios">Testimonios</a></li>
+                        <li><a href="contactos.html">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <!-- COLUMNA 3: Información de contacto (dirección, teléfono, email, horario) -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <h5 class="pie-subtitulo">Contacto</h5>
+                    <ul class="pie-contacto list-unstyled mb-0">
+                        <li>📍 Calle Falsa 123, Madrid</li>
+                        <li>📞 +34 900 123 456</li>
+                        <li>✉ info@destinosdelmundo.com</li>
+                        <li>🕘 Lun-Vie: 9:00 - 20:00</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS DE BOOTSTRAP: Librerías necesarias para que funcionen los elementos interactivos -->
+    <!-- Popper (necesario para los tooltips y dropdowns) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <!-- Bootstrap JavaScript (para que funcionen los modales, navbars, etc) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+  <!-- Script propio: filtros, validación y reservas -->
+  <script src="script.js"></script>
+</body>
+
+</html>
+

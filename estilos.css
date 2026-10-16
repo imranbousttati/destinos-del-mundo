@@ -1,0 +1,407 @@
+
+/*** Estilos  la agencia de viajes(index.html)
+*/
+.barra-top {
+  background-color: dodgerblue;
+}
+
+.barra-top .navbar-brand,
+.barra-top .nav-link,
+.barra-top .nav-link.active {
+  color: white;
+}
+
+.btn-viaje {
+  background-color: gold;
+  border-color: gold;
+  border-radius: 999px;
+  color: black;
+  font-weight: 600;
+  padding: 0.45rem 1rem;
+}
+
+#carouselExampleAutoplaying .carousel-item img {
+  height: 700px;
+  object-fit: cover;
+}
+
+.texto-carrusel {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.6;
+  color: white;
+  z-index: 10;
+  text-align: center;
+  background: black;
+  padding: 20px;
+  border-radius: 20px;
+  width: 80%;
+  max-width: 900px;
+}
+
+.carousel-indicators {
+  bottom: 1.25rem;
+}
+
+.titulo-desti {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 700;
+}
+
+.sub-desti {
+  text-align: center;
+  margin-bottom: 0;
+  color: slategray;
+  font-size: 1rem;
+}
+
+
+
+
+.card-viaje {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid dimgray !important;
+  box-shadow: 0 10px 18px silver;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.card-viaje:hover {
+  transform: translateY(-6px);
+  border-color: dodgerblue !important;
+  box-shadow: 0 16px 28px gray;
+}
+
+.caja-foto {
+  position: relative;
+}
+
+.foto-destino {
+  height: 220px;
+  object-fit: cover;
+  border-bottom: 2px solid dimgray;
+}
+
+.badge-arriba {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 0.78rem;
+  padding: 0.45rem 0.65rem;
+}
+
+.card-viaje .card-title {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.card-viaje .card-body {
+  padding: 0;
+  background-color: white;
+}
+
+.card-viaje .card-body  .d-flex:first-child {
+  margin: 0 !important;
+  padding: 6px 8px;
+  border-bottom: 1px solid lightgray;
+  background-color: white;
+}
+
+.card-viaje .card-text {
+  margin: 0;
+  min-height: 68px;
+  font-size: 0.75rem;
+  line-height: 1.35;
+  padding: 6px 8px;
+  border-bottom: 1px solid lightgray;
+}
+
+.card-viaje .card-body  .d-flex:last-child {
+  margin: 0 !important;
+  padding: 8px;
+  border-top: 1px solid lightgray;
+  background-color: whitesmoke;
+}
+
+.card-viaje .fs-5 {
+  font-size: 1rem !important;
+}
+
+.card-viaje .btn-sm {
+  padding: 0.2rem 0.6rem;
+}
+
+.foto-oferta {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.lista-oferta li {
+  margin-bottom: 0.25rem;
+}
+
+.cabecera-reserva {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.titulo-opi {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.sub-opi {
+  color: slategray;
+  font-size: 1.1rem;
+}
+
+.card-opi {
+  border: 1px solid lightgray;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+.hueco-foto {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 2px dashed lightgray;
+  background-color: whitesmoke;
+  flex-shrink: 0;
+}
+
+.estrellas-opi {
+  color: goldenrod;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+
+.pie-web {
+  background: linear-gradient(135deg, #1d252f, #0f141a);
+  color: white;
+}
+
+.pie-titulo {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.pie-texto {
+  color: #c6ced8;
+  max-width: 320px;
+}
+
+.pie-subtitulo {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.pie-links li,
+.pie-contacto li {
+  margin-bottom: 0.65rem;
+}
+
+.pie-links a {
+  color: #c6ced8;
+  text-decoration: none;
+}
+
+.pie-links a:hover {
+  color: white;
+}
+
+.pie-contacto {
+  color: #c6ced8;
+}
+
+.pie-social {
+  display: flex;
+  gap: 0.7rem;
+  margin-top: 0.8rem;
+}
+
+.pie-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #6d7784;
+  color: white;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.pie-social a:hover {
+  border-color: white;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+
+
+
+/*** Estilos para la sección de destinos
+*/
+
+.portada-destinos {
+  min-height: 340px;
+  background-color: rgb(63, 145, 228);
+  padding-top: 90px;
+}
+
+.portada-destinos-titulo {
+  color: white;
+  font-weight: 700;
+  font-size: clamp(2.2rem, 5vw, 4.2rem);
+}
+
+.portada-destinos-subtitulo {
+  color: lightsteelblue;
+  font-size: clamp(1rem, 2vw, 2rem);
+}
+
+
+.caja-filtros {
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  background-color: whitesmoke;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+.card-tabla {
+  border: 1px solid lightgray;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.card-tabla .card-body {
+  padding: 1rem;
+}
+
+.card-tabla .card-text {
+  font-size: 0.92rem;
+  min-height: 64px;
+}
+
+.zona-contacto {
+  background-color: whitesmoke;
+}
+
+.caja-contacto {
+  border: 1px solid lightgray;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.dato-contacto + .dato-contacto {
+  border-top: 1px solid #eef1f4;
+  padding-top: 1rem;
+}
+
+.icono-contacto {
+  width: 78px;
+  height: 78px;
+  border-radius: 10px;
+  background-color: dodgerblue;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.mapa-contacto {
+  width: 100%;
+  height: 320px;
+  border: 0;
+  border-radius: 10px;
+}
+
+.marco-mapa {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.foto-mapa {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+.redes-contacto .boton-red {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 2px solid lightsteelblue;
+  color: dodgerblue;
+  text-decoration: none;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.redes-contacto .boton-red:hover {
+  background-color: aliceblue;
+}
+
+/* Responsive simple */
+
+/* Moviles (<576px) */
+@media (max-width: 575.98px) {
+  .btn-viaje { width: 100%; margin-top: 0.5rem; }
+  #carouselExampleAutoplaying .carousel-item img { height: 420px; }
+  .texto-carrusel { top: 70%; width: 94%; padding: 12px; }
+  .portada-destinos { min-height: 250px; padding-top: 75px; }
+  .table { font-size: 0.86rem; }
+  .foto-mapa { height: 230px; }
+}
+
+/* Tablets (>=768px) */
+@media (min-width: 768px) {
+  .texto-carrusel { width: 86%; }
+  .portada-destinos { min-height: 320px; }
+  .table { font-size: 0.95rem; }
+}
+
+/* Escritorio (>=992px) */
+@media (min-width: 992px) {
+  .barra-top .navbar-nav { align-items: center; }
+  .texto-carrusel { width: 78%; }
+  .portada-destinos { min-height: 360px; }
+}
+
+
+
+/*** Mejoras añadidas ***/
+
+/* Las fotos de perfil de los testimonios se recortan sin deformarse */
+img.hueco-foto {
+  object-fit: cover;
+  border: 2px solid lightgray;
+}
+
+/* Los textos de los botones de reservar no se parten en la tabla */
+.table td .btn {
+  white-space: nowrap;
+}
+
+/* Mensajes de validación de los formularios */
+.was-validated .form-control:invalid,
+.was-validated .form-select:invalid {
+  border-color: #dc3545;
+}

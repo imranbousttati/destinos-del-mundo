@@ -1,0 +1,391 @@
+<!doctype html>
+<!-- Página de contacto: Aquí los usuarios pueden enviar mensajes y ver información de contacto -->
+<html lang="es">
+
+<head>
+    <title>Contacto - Destinos del Mundo</title>
+    <!-- Configuración del sitio para funcionar bien en todos los dispositivos -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Estilos de Bootstrap (para que se vea bien el diseño) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <!-- Nuestros estilos personalizados -->
+    <link rel="stylesheet" href="estilos.css" />
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg barra-top fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-airplane" viewBox="0 0 16 16">
+                        <path
+                            d="M6.428 1.151C6.708.591 7.213 0 8 0s1.292.592 1.572 1.151C9.861 1.73 10 2.431 10 3v3.691l5.17 2.585a1.5 1.5 0 0 1 .83 1.342V12a.5.5 0 0 1-.582.493l-5.507-.918-.375 2.253 1.318 1.318A.5.5 0 0 1 10.5 16h-5a.5.5 0 0 1-.354-.854l1.319-1.318-.376-2.253-5.507.918A.5.5 0 0 1 0 12v-1.382a1.5 1.5 0 0 1 .83-1.342L6 6.691V3c0-.568.14-1.271.428-1.849m.894.448C7.111 2.02 7 2.569 7 3v4a.5.5 0 0 1-.276.447l-5.448 2.724a.5.5 0 0 0-.276.447v.792l5.418-.903a.5.5 0 0 1 .575.41l.5 3a.5.5 0 0 1-.14.437L6.708 15h2.586l-.647-.646a.5.5 0 0 1-.14-.436l.5-3a.5.5 0 0 1 .576-.411L15 11.41v-.792a.5.5 0 0 0-.276-.447L9.276 7.447A.5.5 0 0 1 9 7V3c0-.432-.11-.979-.322-1.401C8.458 1.159 8.213 1 8 1s-.458.158-.678.599" />
+                    </svg>
+                    Destinos del Mundo
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContacto"
+                    aria-controls="navbarContacto" aria-expanded="false" aria-label="Alternar navegación">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarContacto">
+                    <ul class="navbar-nav mb-2 mb-lg-0 me-lg-3">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="destinos.html">Destinos</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="contactos.html">Contacto</a></li>
+                    </ul>
+                    <button class="btn btn-viaje" type="button" data-bs-toggle="modal"
+                        data-bs-target="#modalReservaRapida">
+                        Reservar ahora
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="portada-destinos d-flex align-items-center justify-content-center">
+            <div class="text-center portada-centro">
+                <h1 class="portada-destinos-titulo mb-2">Contacta con nosotros</h1>
+                <p class="portada-destinos-subtitulo mb-0">Estamos aquí para ayudarte con tu viaje perfecto</p>
+            </div>
+        </section>
+
+        <section class="zona-contacto py-5">
+            <div class="container">
+                <!-- Grid con 2 partes: formulario a la izquierda e información de contacto a la derecha -->
+                <div class="row g-4">
+                    <!-- PARTE IZQUIERDA: Formulario para que los usuarios envíen mensajes -->
+                    <div class="col-12 col-xl-7">
+                        <article class="card caja-contacto h-100">
+                            <div class="card-body p-4 p-lg-5">
+                                <h2 class="mb-4">Envíanos un mensaje</h2>
+
+                                <!-- FORMULARIO: Campos para que el usuario rellene sus datos -->
+                                <div id="avisoContacto" class="alert alert-success d-none" role="alert"></div>
+<form id="formContacto" novalidate>
+                                    <div class="row g-3">
+                                        <!-- Campo: Nombre completo -->
+                                        <div class="col-12 col-md-6">
+                                            <label for="nombreCompleto" class="form-label">Nombre Completo *</label>
+                                            <input type="text" id="nombreCompleto" class="form-control" required>
+                                        </div>
+                                        <!-- Campo: Email -->
+                                        <div class="col-12 col-md-6">
+                                            <label for="emailContacto" class="form-label">Email *</label>
+                                            <input type="email" id="emailContacto" class="form-control" required>
+                                        </div>
+                                        <!-- Campo: Teléfono (opcional) -->
+                                        <div class="col-12 col-md-6">
+                                            <label for="telefonoContacto" class="form-label">Teléfono</label>
+                                            <input type="tel" id="telefonoContacto" class="form-control"
+                                                placeholder="+34 000 000 000">
+                                        </div>
+                                        <!-- Campo: Destino de interés (eliges uno de la lista) -->
+                                        <div class="col-12 col-md-6">
+                                            <label for="destinoInteres" class="form-label">Destino de interés *</label>
+                                            <select id="destinoInteres" class="form-select" required>
+                                                <option value="" selected disabled>Selecciona un destino</option>
+                                                <option>París, Francia</option>
+                                                <option>Phuket, Tailandia</option>
+                                                <option>Reikiavik, Islandia</option>
+                                                <option>Kioto, Japón</option>
+                                                <option>Nueva York, USA</option>
+                                                <option>Santorini, Grecia</option>
+                                                <option>Marrakech, Marruecos</option>
+                                                <option>Machu Picchu, Perú</option>
+                                            </select>
+                                        </div>
+                                        <!-- Campo: Cuántas personas viajarán -->
+                                        <div class="col-12 col-md-6">
+                                            <label for="personasContacto" class="form-label">Número de personas
+                                                *</label>
+                                            <input type="number" id="personasContacto" class="form-control" min="1"
+                                                max="10" value="2" required>
+                                        </div>
+                                        <!-- Campo: Fecha de viaje (calendario) -->
+                                        <div class="col-12 col-md-6">
+                                            <label for="fechaContacto" class="form-label">Fecha de viaje *</label>
+                                            <input type="date" id="fechaContacto" class="form-control" required>
+                                        </div>
+                                        <!-- Campo: Mensaje o consulta (caja de texto grande) -->
+                                        <div class="col-12">
+                                            <label for="mensajeContacto" class="form-label">Mensaje o consulta *</label>
+                                            <textarea id="mensajeContacto" class="form-control" rows="5"
+                                                placeholder="Cuéntanos sobre tu viaje ideal..." required></textarea>
+                                        </div>
+                                        <!-- Checkboxes: Aceptar términos y recibir ofertas -->
+                                        <div class="col-12">
+                                            <!-- Opción para recibir ofertas por email -->
+                                            <div class="form-check mb-2">
+                                                <input class="form-check-input" type="checkbox" id="ofertasContacto">
+                                                <label class="form-check-label" for="ofertasContacto">Deseo recibir
+                                                    ofertas y novedades por email</label>
+                                            </div>
+                                            <!-- Aceptar términos (OBLIGATORIO) -->
+                                            <div class="form-check mb-3">
+                                                <input class="form-check-input" type="checkbox" id="terminosContacto"
+                                                    required>
+                                                <label class="form-check-label" for="terminosContacto">Acepto la
+                                                    política de privacidad y los términos y condiciones *</label>
+                                            </div>
+                                            <!-- Botón para enviar el formulario -->
+                                            <button class="btn btn-primary w-100 btn-lg" type="submit">Enviar
+                                                mensaje</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- PARTE DERECHA: Información de contacto (dirección, teléfono, email, horario, mapa) -->
+                    <div class="col-12 col-xl-5">
+                        <!-- TARJETA 1: Información de contacto con iconos -->
+                        <article class="card caja-contacto mb-4">
+                            <div class="card-body p-4">
+                                <h2 class="mb-4">Información de contacto</h2>
+
+                                <!-- ELEMENTO 1: Dirección con icono de ubicación -->
+                                <div class="dato-contacto d-flex gap-3 mb-3">
+                                    <div class="icono-contacto"><!-- icono de mapa -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                                            <path
+                                                d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10" />
+                                            <path
+                                                d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h5 class="mb-1">Dirección</h5>
+                                        <p class="mb-0 text-muted">Calle Falsa 123<br>28001 Madrid, España</p>
+                                    </div>
+                                </div>
+
+                                <!-- ELEMENTO 2: Teléfono con icono -->
+                                <div class="dato-contacto d-flex gap-3 mb-3">
+                                    <div class="icono-contacto"><!-- icono de teléfono -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                                            <path
+                                                d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h5 class="mb-1">Teléfono</h5>
+                                        <p class="mb-0 text-muted">+34 900 123 456<br>+34 900 123 457</p>
+                                    </div>
+                                </div>
+
+                                <!-- ELEMENTO 3: Email con icono -->
+                                <div class="dato-contacto d-flex gap-3 mb-3">
+                                    <div class="icono-contacto"><!-- icono de sobre (email) -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h5 class="mb-1">Email</h5>
+                                        <p class="mb-0 text-muted">
+                                            info@destinosdelmundo.com<br>reservas@destinosdelmundo.com</p>
+                                    </div>
+                                </div>
+
+                                <!-- ELEMENTO 4: Horario de atención con icono de reloj -->
+                                <div class="dato-contacto d-flex gap-3">
+                                    <div class="icono-contacto"><!-- icono de reloj -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z" />
+                                            <path
+                                                d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h5 class="mb-1">Horario</h5>
+                                        <p class="mb-0 text-muted">Lunes - Viernes: 9:00 - 20:00<br>Sábados: 10:00 -
+                                            14:00<br>Domingos: Cerrado</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- TARJETA 2: Mapa de ubicación -->
+                        <article class="card caja-contacto mb-4">
+                            <div class="card-body p-2">
+                                <div class="marco-mapa">
+                                    <!-- Imagen del mapa mostrando la ubicación -->
+                                    <img src="imagenes/mapa.png" class="foto-mapa" alt="Mapa de ubicación">
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- TARJETA 3: Enlaces a redes sociales -->
+                        <article class="card caja-contacto">
+                            <div class="card-body p-4 text-center">
+                                <h3 class="h4 mb-3">Síguenos en redes sociales</h3>
+                                <!-- Links a Facebook, Instagram, Twitter, YouTube -->
+                                <div class="redes-contacto d-flex justify-content-center gap-3">
+                                    <a href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                            height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                                            <path
+                                                d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+                                        </svg></a>
+                                    <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg"
+                                            width="16" height="16" fill="currentColor" class="bi bi-instagram"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+                                        </svg></a>
+                                    <a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                            height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+                                            <path
+                                                d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
+                                        </svg></a>
+                                    <a href="#" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                            height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+                                            <path
+                                                d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z" />
+                                        </svg></a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="modal fade" id="modalReservaRapida" tabindex="-1" aria-labelledby="modalReservaRapidaLabel">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header cabecera-reserva">
+                        <h5 class="modal-title" id="modalReservaRapidaLabel">Reserva rápida</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                            aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="avisoReserva" class="alert alert-success d-none" role="alert"></div>
+<form id="formReserva" novalidate>
+                            <div class="mb-3">
+                                <label for="nombreReserva" class="form-label">Nombre completo *</label>
+                                <input type="text" class="form-control" id="nombreReserva" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="emailReserva" class="form-label">Email *</label>
+                                <input type="email" class="form-control" id="emailReserva" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="destinoReserva" class="form-label">Destino *</label>
+                                <select class="form-select" id="destinoReserva" required>
+                                    <option value="" selected disabled>Selecciona un destino</option>
+<option>París, Francia</option>
+                                    <option>Phuket, Tailandia</option>
+                                    <option>Reikiavik, Islandia</option>
+                                    <option>Kioto, Japón</option>
+                                    <option>Nueva York, USA</option>
+                                    <option>Santorini, Grecia</option>
+                                    <option>Marrakech, Marruecos</option>
+                                    <option>Machu Picchu, Perú</option>
+                                </select>
+                            </div>
+                            <div class="row g-3">
+                                <div class="col-7">
+                                    <label for="fechaReserva" class="form-label">Fecha de viaje *</label>
+                                    <input type="date" class="form-control" id="fechaReserva" required>
+                                </div>
+                                <div class="col-5">
+                                    <label for="personasReserva" class="form-label">Personas *</label>
+                                    <input type="number" min="1" max="10" value="1" class="form-control"
+                                        id="personasReserva" required>
+                                </div>
+                            </div>
+                            <div class="form-check mt-3">
+                                <input class="form-check-input" type="checkbox" id="terminosReserva" required>
+                                <label class="form-check-label" for="terminosReserva">Acepto los términos y
+                                    condiciones</label>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="submit" form="formReserva" class="btn btn-primary">Enviar reserva</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="pie-web mt-5">
+        <div class="container py-5">
+            <div class="row g-4">
+                <div class="col-12 col-lg-4">
+                    <h4 class="pie-titulo">Destinos del mundo</h4>
+                    <p class="pie-texto">Tu agencia de confianza para vivir experiencias inolvidables alrededor del
+                        mundo.</p>
+                    <div class="pie-social">
+                        <a href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+                            </svg></a>
+                        <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+                            </svg></a>
+                        <a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+                                <path
+                                    d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
+                            </svg></a>
+                        <a href="#" aria-label="YouTube"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+                                <path
+                                    d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z" />
+                            </svg></a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <h5 class="pie-subtitulo">Enlaces rápidos</h5>
+                    <ul class="pie-links list-unstyled mb-0">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a
+                                href="destinos.html">Destinos</a>
+                        </li>
+                        <li><a href="index.html#testimonios">Testimonios</a></li>
+                        <li><a href="contactos.html">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <h5 class="pie-subtitulo">Contacto</h5>
+                    <ul class="pie-contacto list-unstyled mb-0">
+                        <li>📍 Calle Falsa 123, Madrid</li>
+                        <li>📞 +34 900 123 456</li>
+                        <li>✉ info@destinosdelmundo.com</li>
+                        <li>🕘 Lun-Vie: 9:00 - 20:00</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+  <!-- Script propio: filtros, validación y reservas -->
+  <script src="script.js"></script>
+</body>
+
+</html>
